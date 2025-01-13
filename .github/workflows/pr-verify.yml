@@ -24,4 +24,4 @@ jobs:
         run: dotnet test --configuration Release --no-build
 
       - name: dotnet format
-        run: dotnet format -v detailed --no-changes
+        run: dotnet format -v detailed --verify-no-changes
