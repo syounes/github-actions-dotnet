@@ -35,7 +35,7 @@ jobs:
   deploy-dev:
     name: Deploy Dev
     needs: build
-    uses: ./.github/workflows/step-deploy.yml
+    uses: syounes/github-actions-reusable/.github/workflows/step-deploy.yml@main
     with:
      env: dev
     secrets: inherit
@@ -43,7 +43,7 @@ jobs:
   deploy-prod:
     name: Deploy Prod
     needs: deploy-dev
-    uses: ./.github/workflows/step-deploy.yml
+    uses: syounes/github-actions-reusable/.github/workflows/step-deploy.yml@main
     with:
      env: prod
     secrets: inherit
