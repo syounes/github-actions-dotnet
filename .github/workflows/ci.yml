@@ -35,15 +35,19 @@ jobs:
   deploy-dev:
     name: Deploy Dev
     needs: build
-    uses: syounes/github-actions-reusable/.github/workflows/step-deploy.yml@main
+    uses: ./.github/workflows/step-deploy.yml
     with:
      env: dev
+     resource_group_name: rg-dometrain-dev
+     app_service_name: app-dometrain-github-actions-suyou-dev
     secrets: inherit
 
   deploy-prod:
     name: Deploy Prod
     needs: deploy-dev
-    uses: syounes/github-actions-reusable/.github/workflows/step-deploy.yml@main
+    uses: ./.github/workflows/step-deploy.yml
     with:
      env: prod
+     resource_group_name: rg-dometrain-prod
+     app_service_name: app-dometrain-github-actions-suyou-prod
     secrets: inherit
