@@ -9,9 +9,9 @@ on:
 
 jobs:
   deploy:
-    name: Deploy ${{ input.env }}
+    name: Deploy ${{ inputs.env }}
     runs-on: ubuntu-latest
-    environment: Deploy ${{ input.env }}
+    environment: Deploy ${{ inputs.env }}
 
     steps:
       - uses: actions/download-artifact@v4
@@ -29,5 +29,5 @@ jobs:
       - name: 'Deploy to Azure App Service'
         uses: azure/webapps-deploy@v2
         with: 
-          app-name: app-dometrain-github-actions-suyou-Deploy-${{ input.env }}
+          app-name: app-dometrain-github-actions-suyou-Deploy-${{ inputs.env }}
           package: artifacts/
